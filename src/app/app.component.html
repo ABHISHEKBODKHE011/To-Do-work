@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="main">
+      <h1>* ToDO List *</h1>
+      <h2>Structure your day, master your goals</h2>
+      <br/>
+      <div id="first">
+        <input (input)="addText($event)" id="inp">
+        <button (click)="addTask()">Add Task</button>
+      </div>
+      
+      <br />
+      <img *ngIf="tasks.length===0" src="assets/lodu.webp" width="170">
+    
+      <div *ngFor="let i of tasks; let ind = index" id="task">
+        <input type="checkbox" (input)="taskCompleted(ind)">
+        <li style="list-style: none;">{{i}} </li>
+        <img src="assets/delete.png" style="cursor: pointer;" (click)="deleteTask(ind)">
+       
+      </div>
+      <div class="name">
+        <h3 class="right-corner">Abhi</h3>
+      </div>
+      <h1 *ngIf="completed.length!=0">Completed Task:</h1>
+      <li *ngFor="let j of completed" style="list-style: none; text-decoration: line-through;">{{j}}</li>
+
+    
+    
+
+     
+  </div>
+</div>
